@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | FurnitureShop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { 
+      background-color: #f8f9fa; 
+    }
+
+    .checkout-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav style="background-image: linear-gradient(rgb(90, 72, 57), rgb(41, 38, 36));" class="navbar navbar-expand-md navbar-dark bg-dark p-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">🛋️ Furniture E-Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">My cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container checkout-container">
+    <h2 class="mb-4">Checkout</h2>
+
+    <div id="orderSummary" class="mb-4"></div>
+
+    <form id="checkoutForm" action="https://formspree.io/f/xblqljlz" method="POST">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Address</label>
+        <input type="text" id="address" name="address" class="form-control" placeholder="Enter your address">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="example@mail.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Payment Method</label>
+        <select id="payment" name="payment" class="form-select">
+          <option value="">Choose...</option>
+          <option value="Card">Credit/Debit Card</option>
+          <option value="Cash">Cash on Delivery</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100">Place Order</button>
+    </form>
+
+    <div id="successMessage" class="alert alert-success mt-4 d-none">
+      Thank you for your purchase! Your order has been placed successfully.
+    </div>
+  </div>
+
+  <footer class="bg-light py-4 mt-5 border-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p class="mb-0 fw-semibold">© 2025 Furniture E-Shop | All rights reserved</p>
+            <ul class="nav">
+                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Support service</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
